@@ -1,9 +1,16 @@
-import { FiHome } from "react-icons/fi";
+import { FiHome, FiMaximize2 } from "react-icons/fi";
+import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
+import { TbMicrophone2 } from "react-icons/tb";
+import { RiPlayList2Fill } from "react-icons/ri";
+import { RxSpeakerLoud } from "react-icons/rx";
 import {
   BsSearch,
   BsBookmarkHeartFill,
   BsFillPlayFill,
   BsHeart,
+  BsRepeat,
+  BsShuffle,
+  BsLaptop,
 } from "react-icons/bs";
 import {
   MdAddBox,
@@ -271,7 +278,7 @@ export default function Home() {
         </main>
       </div>
       <footer className="bg-zinc-800 border-t border-zinc-700 p-4 flex items-center justify-between">
-        <div className="flex items-center gap-3 w-1/6">
+        <div className="flex items-center gap-3">
           <Image
             src="/capa-player.png"
             width={60}
@@ -286,8 +293,36 @@ export default function Home() {
             <BsHeart />
           </button>
         </div>
-        <div></div>
-        <div></div>
+        <div className="flex flex-col items-center gap-2">
+          <div className="flex items-center gap-4">
+            <BsShuffle className="text-green-600" />
+            <AiFillStepBackward size={24} className="text-zinc-200" />
+            <button className="w-10 h-10 flex items-center justify-center pl-0.5 rounded-full bg-zinc-100">
+              <BsFillPlayFill className="text-zinc-950 w-6 h-6" />
+            </button>
+            <AiFillStepForward size={24} className="text-zinc-200" />
+            <BsRepeat className="text-zinc-200" />
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-zinc-400">0:31</span>
+            <div className="h-1 rounded-full w-96 bg-zinc-600">
+              <div className="h-1 rounded-full w-40 bg-zinc-200"></div>
+            </div>
+            <span className="text-xs text-zinc-400">3:41</span>
+          </div>
+        </div>
+        <div className="flex items-center gap-3">
+          <TbMicrophone2 />
+          <RiPlayList2Fill />
+          <BsLaptop />
+          <div className="flex items-center gap-2">
+            <RxSpeakerLoud />
+            <div className="h-1 rounded-full w-24 bg-zinc-600">
+              <div className="h-1 rounded-full w-10 bg-zinc-200"></div>
+            </div>
+          </div>
+          <FiMaximize2 />
+        </div>
       </footer>
     </div>
   );
